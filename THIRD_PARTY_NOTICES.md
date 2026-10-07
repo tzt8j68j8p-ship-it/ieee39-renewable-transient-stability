@@ -1,0 +1,28 @@
+# Third-party notices
+
+This project is distributed under GPL-3.0-or-later. The full license is in [LICENSE](LICENSE).
+
+## ANDES
+
+ANDES 2.0.0 is distributed under GPL-3.0-or-later according to its distribution metadata.
+Its original authorship and copyright notices remain applicable.
+Upstream project: [CURENT/andes](https://github.com/CURENT/andes).
+
+The official IEEE39 workbook is an unchanged copy of the bundled ANDES case
+`andes/cases/ieee39/ieee39_full.xlsx`. Source version, SHA256 and expected model counts
+are recorded in [cases/manifest.json](cases/manifest.json).
+
+## Adapted IEEE39 and renewable templates
+
+The adapted synchronous baseline and Bus37 renewable pilot are author-maintained
+IEEE39 derivatives, bundled under `cases/renewable/sources/` with their SHA256 values.
+The generic GFL construction pattern originated in an author-maintained prototype;
+it preserves the underlying ANDES model definitions and upstream IEEE39 attribution.
+
+The main renewable models use ANDES REGCP1, PLL2 and REECB1. Their ratings,
+replacement mappings and deterministic workbook hashes are documented in
+[model provenance](docs/model_provenance.md). No private project directory is
+required to run the published fault, CCT or comparison entry points.
+
+The runner, metrics and integer-grid binary-search flow were refactored from
+author-maintained prototypes. Those prototypes are not imported at runtime.

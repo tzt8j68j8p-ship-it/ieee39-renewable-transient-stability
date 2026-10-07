@@ -1,0 +1,15 @@
+{
+  "cases": [
+    {
+      "id": "ieee39_official",
+      "file": "ieee39_official.xlsx",
+      "origin": "ANDES 2.0.0 bundled case ieee39/ieee39_full.xlsx",
+      "copied_from": "andes/cases/ieee39/ieee39_full.xlsx",
+      "sha256": "9c2048dc94201ee48ffe816de65d53831fa1f4b0e7fdf32f24c50f1017edcfe5",
+      "modified": false,
+      "expected_bus_count": 39,
+      "expected_genrou_count": 10
+    }
+  ],
+  "andes_license": "GPL-3.0-or-later"
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "recomputed_physical_values": false,
+  "exports": [
+    {
+      "csv": "benchmark_cct_summary.csv",
+      "json": "benchmark_cct_summary.json",
+      "rows": 15,
+      "source_csv_sha256": "767d182b65883bcdf3b65e7eb5e0b805590ce78cc98e0c502cd098a494239cd1",
+      "source_json_sha256": "7b4d87df49920fed40f0868c771ae3826374e61a883734cfa3ca2f69a23302d0",
+      "published_csv_sha256": "5122d38b1956fcdfbfb6268bf9410348d3c55fb91aad56478a66926c6f34c367",
+      "published_json_sha256": "9a5d9d3c82fc3198fc4026f1bb0f5fde35f3c52bec0cbcfe6530d409f4283cf2",
+      "transformation": "Copy verified fields unchanged; omit internal directories and execution metadata",
+      "omitted_columns": [
+        "source_directory"
+      ]
+    },
+    {
+      "csv": "renewable_scenario_summary.csv",
+      "json": "renewable_scenario_summary.json",
+      "rows": 20,
+      "source_csv_sha256": "f076317277d948c7d52ed373e7bff8f3768196ab587a8c29f9eeba3fd11c2a12",
+      "source_json_sha256": "772c36842382b2ba4d104029b06a0128f5410531cc17159a995025f51260eb6e",
+      "published_csv_sha256": "c0ed80785201a0b7404ce52d5a5dd0e8eb44ef1e78e2f4a39f7733d685678f6c",
+      "published_json_sha256": "fd7fca8727349f0ad69019cd208e0ec8c3fd2b6e1ff916e82fe893141a0eed3b",
+      "transformation": "Copy verified fields unchanged; omit internal directories and execution metadata",
+      "omitted_columns": [
+        "cct_directory",
+        "reference_directory"
+      ]
+    }
+  ]
+}

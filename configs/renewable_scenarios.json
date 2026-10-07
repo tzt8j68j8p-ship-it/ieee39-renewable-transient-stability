@@ -1,0 +1,9 @@
+{
+  "adapted_source": "cases/renewable/sources/ieee39_10gen_no_source_shunts.xlsx",
+  "pilot_source": "cases/renewable/sources/ieee39_bus37_regcp1_reecb1_pilot.xlsx",
+  "replacement_order": [37, 39, 38],
+  "renewable_Sn_rule": "equal_to_original_synchronous_Sn",
+  "baseline_config": "configs/baseline.json",
+  "frozen_solver_summary": "results/day1/nofault/summary.json",
+  "smoke_results": "results/day3a/scenario_smoke"
+}

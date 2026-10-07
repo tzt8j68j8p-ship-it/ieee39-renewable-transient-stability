@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "main_manifest": "main/manifest.json",
+  "stress_manifest": "stress/manifest.json",
+  "day3b_main_heatmap_source": "main/manifest.json only",
+  "main_scenario_ids": [
+    "S0",
+    "S1",
+    "S2",
+    "S3"
+  ],
+  "original_day3a_archive": "manifest.json",
+  "Bus39_replacements_role": "external-equivalent stress scenarios",
+  "original_day3a_models_and_results_preserved": true
+}

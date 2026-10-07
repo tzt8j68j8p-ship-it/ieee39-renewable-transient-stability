@@ -1,0 +1,13 @@
+{
+  "cases/ieee39_official.xlsx": "9c2048dc94201ee48ffe816de65d53831fa1f4b0e7fdf32f24c50f1017edcfe5",
+  "cases/renewable/S0_adapted_sg.xlsx": "f1a4e0b7a89c87aa5811d36b91aa054ab4638440c8cc3021b085e18ee6539374",
+  "cases/renewable/S1_bus37_renewable.xlsx": "97bd9447536889f1a3d61e4956acbec812df8cb031652224610eb1e6f4dab5e4",
+  "cases/renewable/S2_bus37_bus39_renewable.xlsx": "bbca0a5621fe682e5cb0fcc3e203e8df043a8cb7c4e2cd72bf46bd0676211558",
+  "cases/renewable/S3_bus37_bus39_bus38_renewable.xlsx": "5e9ccde236f26791de4ae2729ebeefe71a6b5c730d55f362e31510c8b37dd9b9",
+  "cases/renewable/main/S0_adapted_sg.xlsx": "f1a4e0b7a89c87aa5811d36b91aa054ab4638440c8cc3021b085e18ee6539374",
+  "cases/renewable/main/S1_bus37_renewable.xlsx": "97bd9447536889f1a3d61e4956acbec812df8cb031652224610eb1e6f4dab5e4",
+  "cases/renewable/main/S2_bus37_bus38_renewable.xlsx": "595cd3a01a05c110fe681e00a4896422a44cb60777e2c008cb22f116ed7764f9",
+  "cases/renewable/main/S3_bus37_bus38_bus32_renewable.xlsx": "6251363814e114373511fb0c6f258aacd6f9a9289e9e666f5c1e5fa7ab669ef7",
+  "cases/renewable/sources/ieee39_10gen_no_source_shunts.xlsx": "f1a4e0b7a89c87aa5811d36b91aa054ab4638440c8cc3021b085e18ee6539374",
+  "cases/renewable/sources/ieee39_bus37_regcp1_reecb1_pilot.xlsx": "6d4b03946c94bbf44fbf246a71f402a797bb4965344894e60bd029b1a3cff7d2"
+}

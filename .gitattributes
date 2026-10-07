@@ -1,0 +1,11 @@
+* text=auto eol=lf
+* whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Preserve bytes of source/metadata referenced by historical SHA256 identities.
+*.py -text
+*.json -text
+*.csv -text
+*.xlsx binary
+*.png binary
+# Generated vector assets retain their original formatter output.
+*.svg -text -whitespace
+*.md text eol=lf

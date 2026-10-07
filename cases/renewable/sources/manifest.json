@@ -1,0 +1,19 @@
+{
+  "sources": [
+    {
+      "file": "cases/renewable/sources/ieee39_10gen_no_source_shunts.xlsx",
+      "sha256": "f1a4e0b7a89c87aa5811d36b91aa054ab4638440c8cc3021b085e18ee6539374",
+      "original_read_only_source": "Author-maintained adapted IEEE39 source; bundled at cases/renewable/sources/ieee39_10gen_no_source_shunts.xlsx"
+    },
+    {
+      "file": "cases/renewable/sources/ieee39_bus37_regcp1_reecb1_pilot.xlsx",
+      "sha256": "6d4b03946c94bbf44fbf246a71f402a797bb4965344894e60bd029b1a3cff7d2",
+      "original_read_only_source": "Author-maintained adapted IEEE39 source; bundled at cases/renewable/sources/ieee39_bus37_regcp1_reecb1_pilot.xlsx"
+    }
+  ],
+  "template_constructor_reference": {
+    "original_read_only_source": "Author-maintained generic GFL construction prototype",
+    "sha256": "31fccb8df4b40abca80493da5babb79891b11dcab773c05615ae2c40457104fc"
+  },
+  "runtime_reads_only_project_local_assets": true
+}

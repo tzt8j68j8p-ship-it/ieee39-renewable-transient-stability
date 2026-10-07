@@ -1,0 +1,639 @@
+{
+  "schema_version": 1,
+  "build_version": "1.0",
+  "sources": [
+    {
+      "file": "cases/renewable/sources/ieee39_10gen_no_source_shunts.xlsx",
+      "sha256": "f1a4e0b7a89c87aa5811d36b91aa054ab4638440c8cc3021b085e18ee6539374"
+    },
+    {
+      "file": "cases/renewable/sources/ieee39_bus37_regcp1_reecb1_pilot.xlsx",
+      "sha256": "6d4b03946c94bbf44fbf246a71f402a797bb4965344894e60bd029b1a3cff7d2"
+    }
+  ],
+  "generator": {
+    "script": "scripts/build_renewable_scenarios.py",
+    "sha256": "297cd359e5a8dc469992ba539fa2144262adbb78031c007201533dad2ece463c",
+    "module_sha256": "3f66559e4a2c612bbd9c924c282eb33ab105f361c3e0ef85b86c208474e2aa84",
+    "openpyxl_version": "3.1.5"
+  },
+  "configuration": {
+    "adapted_source": "cases/renewable/sources/ieee39_10gen_no_source_shunts.xlsx",
+    "pilot_source": "cases/renewable/sources/ieee39_bus37_regcp1_reecb1_pilot.xlsx",
+    "replacement_order": [
+      37,
+      38,
+      32
+    ],
+    "renewable_Sn_rule": "equal_to_original_synchronous_Sn",
+    "baseline_config": "configs/baseline.json",
+    "frozen_solver_summary": "results/day1/nofault/summary.json",
+    "smoke_results": "results/day3a5/main_smoke"
+  },
+  "common_sheet_fingerprint": "45197203f598e689a8f23804ae26b375220ae3c587a87e15c053a1ad2070ffec",
+  "template_rule": {
+    "gammap": 1,
+    "gammaq": 1,
+    "renewable_Sn": "original GENROU.Sn",
+    "static_gen_parameters": "unchanged",
+    "capacity_scaling": "Kqv/Iqh1/Iql1 multiplied by original Sn / pilot Sn; other template inputs unchanged"
+  },
+  "pilot_crosscheck": {
+    "pilot_bus37_Sn_MVA": 700.0,
+    "formal_bus37_Sn_MVA": 970.2,
+    "intentional_differences": [
+      "Keep StaticGen.Sn from S0",
+      "Match renewable Sn to original SG",
+      "Scale three unconverted controller inputs",
+      "Explicit gammaP/gammaQ=1"
+    ]
+  },
+  "scenarios": [
+    {
+      "scenario_id": "S0",
+      "file": "S0_adapted_sg.xlsx",
+      "sha256": "f1a4e0b7a89c87aa5811d36b91aa054ab4638440c8cc3021b085e18ee6539374",
+      "source_model": "cases/renewable/sources/ieee39_10gen_no_source_shunts.xlsx",
+      "renewable_buses": [],
+      "num_synch_generators": 10,
+      "num_renewable_generators": 0,
+      "replacements": [],
+      "renewable_P_MW": 0,
+      "total_generation_P_MW": 6105.148412289636,
+      "renewable_share_pct": 0.0,
+      "share_basis": "Own online StaticGen actual P after PFlow, captured before TDS.init (S0/S1 exact identity reuse)",
+      "scenario_class": "main_penetration_scenarios",
+      "include_in_day3b_main_heatmap": true,
+      "original_sg_M_sum": 1813.84938,
+      "remaining_sg_M_sum": 1813.84938,
+      "removed_sg_M_sum": 0,
+      "removed_M_fraction_pct": 0.0,
+      "expected_share_from_identical_static_plan": {
+        "renewable_P_MW": 0,
+        "total_generation_P_MW": 6105.148412289636,
+        "renewable_share_pct": 0.0
+      },
+      "smoke_evidence": {
+        "mode": "REUSED_DAY3A",
+        "reused": true,
+        "reasons": [
+          "EXACT_CASE_IDENTITY_MATCH"
+        ],
+        "summary_reference": "results/day3a/scenario_smoke/S0/summary.json",
+        "summary_sha256": "1086793c37e28b43c4f852180c271b178d2ea28157194fa2d713b6cdbef1b28e",
+        "identity": {
+          "model_sha256": "f1a4e0b7a89c87aa5811d36b91aa054ab4638440c8cc3021b085e18ee6539374",
+          "program_sha256": {
+            "src/ieee39ts/scenarios.py": "3f66559e4a2c612bbd9c924c282eb33ab105f361c3e0ef85b86c208474e2aa84",
+            "src/ieee39ts/scenario_smoke.py": "ae088ab977e4a38ad6a1db0f6d69ca3e3765d516c7c170f1064f1ec7fa7e95da",
+            "scripts/build_renewable_scenarios.py": "297cd359e5a8dc469992ba539fa2144262adbb78031c007201533dad2ece463c",
+            "scripts/smoke_renewable_scenarios.py": "db1196e988bb3470cdfda1c7d4c89133abd60eb461cc1779a19dfd057680c2fa",
+            "configs/renewable_scenarios.json": "a2b1dcfac9998c738c02710f2f804ae034fe30c5fe03d4cf9e96da9ae4145552",
+            "src/ieee39ts/simulation.py": "520d09e1e25780faf763a6d83e7dbd0e00e581b2d48191066062072fbbac9c34",
+            "src/ieee39ts/stability.py": "b65d428a67495c87c0415a2aff246f88da4010ed2dc21287d529fecddc3129c2",
+            "src/ieee39ts/types.py": "fe8ef4911f4b875dc202b691b3a3fa28b457daec1d306614bccdfb6ef81186d6",
+            "src/ieee39ts/io.py": "ef4d12cbe8e8ea908be6453e3230484336961b6fd4d2b9b3ec9cd5c240e4283e"
+          },
+          "ANDES_API_sha256": {
+            "models/renewable/regca1.py": "b8b458f91d4744f9633676b5684067d2b3b04fbbea94380dce29138d5682c392",
+            "models/renewable/regcp1.py": "6de740b6443c86dc5a5881505162ba80431597830e5b55455396f061b5455802",
+            "models/renewable/reecb1.py": "c88e00fa586288b69a255c0789f2f82fb833058a080a673e90211568c1602f1f",
+            "models/measurement/pll.py": "ee147a79fcc7e375c67ccf885ccc0f97b6dca3a2490e2ead71afccb5b2f9081f",
+            "models/synchronous/genbase.py": "423dcd590748d328fe8a3ad7e41ff321810a790a476d4fab41066305d54d5702",
+            "system/facade.py": "b6aa12d10811a5b35e0d5939c309d3414713daff4f5d30f2b9063e0d518080c9",
+            "routines/tds.py": "224ff43d78de8e6808efa0a6b858d8dbe2ca511128a90a8260009c8146d6e8ba"
+          },
+          "python_version": "3.13.15",
+          "ANDES_version": "2.0.0",
+          "solver_config": {
+            "linsolve": 0,
+            "method": "trapezoid",
+            "tol": 0.0001,
+            "t0": 0.0,
+            "tf": 8.0,
+            "fixt": 1,
+            "shrinkt": 1,
+            "honest": 0,
+            "tstep": 0.0078125,
+            "max_iter": 15,
+            "refresh_event": 0,
+            "test_init": 1,
+            "check_conn": 1,
+            "criteria": 1,
+            "ddelta_limit": 180.0,
+            "g_scale": 1,
+            "reset_tiny": 1,
+            "qrt": 0,
+            "kqrt": 1.0,
+            "store_z": 0,
+            "store_f": 0,
+            "store_h": 0,
+            "store_i": 0,
+            "limit_store": 0,
+            "max_store": 900,
+            "save_every": 1,
+            "save_mode": "auto",
+            "no_tqdm": 1,
+            "chatter_iter": 4,
+            "linesearch": 1,
+            "dtmax": 0,
+            "dtmin_adapt": 0,
+            "abstol": 1e-06,
+            "reltol": 0.001
+          },
+          "pflow_config": {
+            "linsolve": 0,
+            "tol": 1e-06,
+            "max_iter": 25,
+            "method": "NR",
+            "n_factorize": 4,
+            "report": 1,
+            "degree": 0,
+            "init_tds": 0,
+            "linesearch": 1
+          },
+          "no_fault": true,
+          "observation_end_s": 8.0
+        }
+      },
+      "smoke_passed": true
+    },
+    {
+      "scenario_id": "S1",
+      "file": "S1_bus37_renewable.xlsx",
+      "sha256": "97bd9447536889f1a3d61e4956acbec812df8cb031652224610eb1e6f4dab5e4",
+      "source_model": "cases/renewable/sources/ieee39_10gen_no_source_shunts.xlsx",
+      "renewable_buses": [
+        37
+      ],
+      "num_synch_generators": 9,
+      "num_renewable_generators": 1,
+      "replacements": [
+        {
+          "bus": 37,
+          "generator_id": "GENROU_8",
+          "static_gen_id": 8,
+          "original_synch_Sn_MVA": 970.2,
+          "renewable_Sn_MVA": 970.2,
+          "replacement_rule": "Equal Sn; retain StaticGen and all its parameters; gammaP=gammaQ=1",
+          "removed": {
+            "GENROU": [
+              "GENROU_8"
+            ],
+            "TGOV1N": [
+              "TGOV1_8"
+            ],
+            "IEEEX1": [
+              "IEEEX1_8"
+            ],
+            "IEEEST": [
+              "IEEEST_8"
+            ]
+          }
+        }
+      ],
+      "renewable_P_MW": 539.999999999995,
+      "total_generation_P_MW": 6105.148412289636,
+      "renewable_share_pct": 8.844993823786124,
+      "share_basis": "Own online StaticGen actual P after PFlow, captured before TDS.init (S0/S1 exact identity reuse)",
+      "scenario_class": "main_penetration_scenarios",
+      "include_in_day3b_main_heatmap": true,
+      "original_sg_M_sum": 1813.84938,
+      "remaining_sg_M_sum": 1766.69766,
+      "removed_sg_M_sum": 47.151720000000005,
+      "removed_M_fraction_pct": 2.599538887843047,
+      "expected_share_from_identical_static_plan": {
+        "renewable_P_MW": 539.999999999995,
+        "total_generation_P_MW": 6105.148412289636,
+        "renewable_share_pct": 8.844993823786124
+      },
+      "smoke_evidence": {
+        "mode": "REUSED_DAY3A",
+        "reused": true,
+        "reasons": [
+          "EXACT_CASE_IDENTITY_MATCH"
+        ],
+        "summary_reference": "results/day3a/scenario_smoke/S1/summary.json",
+        "summary_sha256": "c2d83f5cfefa5957baef56d045765cb596d16c221cb16974969cce6c4c05f05a",
+        "identity": {
+          "model_sha256": "97bd9447536889f1a3d61e4956acbec812df8cb031652224610eb1e6f4dab5e4",
+          "program_sha256": {
+            "src/ieee39ts/scenarios.py": "3f66559e4a2c612bbd9c924c282eb33ab105f361c3e0ef85b86c208474e2aa84",
+            "src/ieee39ts/scenario_smoke.py": "ae088ab977e4a38ad6a1db0f6d69ca3e3765d516c7c170f1064f1ec7fa7e95da",
+            "scripts/build_renewable_scenarios.py": "297cd359e5a8dc469992ba539fa2144262adbb78031c007201533dad2ece463c",
+            "scripts/smoke_renewable_scenarios.py": "db1196e988bb3470cdfda1c7d4c89133abd60eb461cc1779a19dfd057680c2fa",
+            "configs/renewable_scenarios.json": "a2b1dcfac9998c738c02710f2f804ae034fe30c5fe03d4cf9e96da9ae4145552",
+            "src/ieee39ts/simulation.py": "520d09e1e25780faf763a6d83e7dbd0e00e581b2d48191066062072fbbac9c34",
+            "src/ieee39ts/stability.py": "b65d428a67495c87c0415a2aff246f88da4010ed2dc21287d529fecddc3129c2",
+            "src/ieee39ts/types.py": "fe8ef4911f4b875dc202b691b3a3fa28b457daec1d306614bccdfb6ef81186d6",
+            "src/ieee39ts/io.py": "ef4d12cbe8e8ea908be6453e3230484336961b6fd4d2b9b3ec9cd5c240e4283e"
+          },
+          "ANDES_API_sha256": {
+            "models/renewable/regca1.py": "b8b458f91d4744f9633676b5684067d2b3b04fbbea94380dce29138d5682c392",
+            "models/renewable/regcp1.py": "6de740b6443c86dc5a5881505162ba80431597830e5b55455396f061b5455802",
+            "models/renewable/reecb1.py": "c88e00fa586288b69a255c0789f2f82fb833058a080a673e90211568c1602f1f",
+            "models/measurement/pll.py": "ee147a79fcc7e375c67ccf885ccc0f97b6dca3a2490e2ead71afccb5b2f9081f",
+            "models/synchronous/genbase.py": "423dcd590748d328fe8a3ad7e41ff321810a790a476d4fab41066305d54d5702",
+            "system/facade.py": "b6aa12d10811a5b35e0d5939c309d3414713daff4f5d30f2b9063e0d518080c9",
+            "routines/tds.py": "224ff43d78de8e6808efa0a6b858d8dbe2ca511128a90a8260009c8146d6e8ba"
+          },
+          "python_version": "3.13.15",
+          "ANDES_version": "2.0.0",
+          "solver_config": {
+            "linsolve": 0,
+            "method": "trapezoid",
+            "tol": 0.0001,
+            "t0": 0.0,
+            "tf": 8.0,
+            "fixt": 1,
+            "shrinkt": 1,
+            "honest": 0,
+            "tstep": 0.0078125,
+            "max_iter": 15,
+            "refresh_event": 0,
+            "test_init": 1,
+            "check_conn": 1,
+            "criteria": 1,
+            "ddelta_limit": 180.0,
+            "g_scale": 1,
+            "reset_tiny": 1,
+            "qrt": 0,
+            "kqrt": 1.0,
+            "store_z": 0,
+            "store_f": 0,
+            "store_h": 0,
+            "store_i": 0,
+            "limit_store": 0,
+            "max_store": 900,
+            "save_every": 1,
+            "save_mode": "auto",
+            "no_tqdm": 1,
+            "chatter_iter": 4,
+            "linesearch": 1,
+            "dtmax": 0,
+            "dtmin_adapt": 0,
+            "abstol": 1e-06,
+            "reltol": 0.001
+          },
+          "pflow_config": {
+            "linsolve": 0,
+            "tol": 1e-06,
+            "max_iter": 25,
+            "method": "NR",
+            "n_factorize": 4,
+            "report": 1,
+            "degree": 0,
+            "init_tds": 0,
+            "linesearch": 1
+          },
+          "no_fault": true,
+          "observation_end_s": 8.0
+        }
+      },
+      "smoke_passed": true
+    },
+    {
+      "scenario_id": "S2",
+      "file": "S2_bus37_bus38_renewable.xlsx",
+      "sha256": "595cd3a01a05c110fe681e00a4896422a44cb60777e2c008cb22f116ed7764f9",
+      "source_model": "cases/renewable/sources/ieee39_10gen_no_source_shunts.xlsx",
+      "renewable_buses": [
+        37,
+        38
+      ],
+      "num_synch_generators": 8,
+      "num_renewable_generators": 2,
+      "replacements": [
+        {
+          "bus": 37,
+          "generator_id": "GENROU_8",
+          "static_gen_id": 8,
+          "original_synch_Sn_MVA": 970.2,
+          "renewable_Sn_MVA": 970.2,
+          "replacement_rule": "Equal Sn; retain StaticGen and all its parameters; gammaP=gammaQ=1",
+          "removed": {
+            "GENROU": [
+              "GENROU_8"
+            ],
+            "TGOV1N": [
+              "TGOV1_8"
+            ],
+            "IEEEX1": [
+              "IEEEX1_8"
+            ],
+            "IEEEST": [
+              "IEEEST_8"
+            ]
+          }
+        },
+        {
+          "bus": 38,
+          "generator_id": "GENROU_9",
+          "static_gen_id": 9,
+          "original_synch_Sn_MVA": 1684.1,
+          "renewable_Sn_MVA": 1684.1,
+          "replacement_rule": "Equal Sn; retain StaticGen and all its parameters; gammaP=gammaQ=1",
+          "removed": {
+            "GENROU": [
+              "GENROU_9"
+            ],
+            "TGOV1N": [
+              "TGOV1_9"
+            ],
+            "IEEEX1": [
+              "IEEEX1_9"
+            ],
+            "IEEEST": [
+              "IEEEST_9"
+            ]
+          }
+        }
+      ],
+      "renewable_P_MW": 1369.999999999966,
+      "total_generation_P_MW": 6105.148412289636,
+      "renewable_share_pct": 22.440076923308894,
+      "share_basis": "Own online StaticGen actual P after PFlow, captured before TDS.init (S0/S1 exact identity reuse)",
+      "scenario_class": "main_penetration_scenarios",
+      "include_in_day3b_main_heatmap": true,
+      "original_sg_M_sum": 1813.84938,
+      "remaining_sg_M_sum": 1650.49476,
+      "removed_sg_M_sum": 163.35461999999998,
+      "removed_M_fraction_pct": 9.005963879977728,
+      "expected_share_from_identical_static_plan": {
+        "renewable_P_MW": 1369.999999999966,
+        "total_generation_P_MW": 6105.148412289636,
+        "renewable_share_pct": 22.440076923308894
+      },
+      "smoke_evidence": {
+        "mode": "MEASURED_DAY3A5",
+        "summary_reference": "results/day3a5/main_smoke/S2/summary.json"
+      },
+      "smoke_passed": true
+    },
+    {
+      "scenario_id": "S3",
+      "file": "S3_bus37_bus38_bus32_renewable.xlsx",
+      "sha256": "6251363814e114373511fb0c6f258aacd6f9a9289e9e666f5c1e5fa7ab669ef7",
+      "source_model": "cases/renewable/sources/ieee39_10gen_no_source_shunts.xlsx",
+      "renewable_buses": [
+        37,
+        38,
+        32
+      ],
+      "num_synch_generators": 7,
+      "num_renewable_generators": 3,
+      "replacements": [
+        {
+          "bus": 37,
+          "generator_id": "GENROU_8",
+          "static_gen_id": 8,
+          "original_synch_Sn_MVA": 970.2,
+          "renewable_Sn_MVA": 970.2,
+          "replacement_rule": "Equal Sn; retain StaticGen and all its parameters; gammaP=gammaQ=1",
+          "removed": {
+            "GENROU": [
+              "GENROU_8"
+            ],
+            "TGOV1N": [
+              "TGOV1_8"
+            ],
+            "IEEEX1": [
+              "IEEEX1_8"
+            ],
+            "IEEEST": [
+              "IEEEST_8"
+            ]
+          }
+        },
+        {
+          "bus": 38,
+          "generator_id": "GENROU_9",
+          "static_gen_id": 9,
+          "original_synch_Sn_MVA": 1684.1,
+          "renewable_Sn_MVA": 1684.1,
+          "replacement_rule": "Equal Sn; retain StaticGen and all its parameters; gammaP=gammaQ=1",
+          "removed": {
+            "GENROU": [
+              "GENROU_9"
+            ],
+            "TGOV1N": [
+              "TGOV1_9"
+            ],
+            "IEEEX1": [
+              "IEEEX1_9"
+            ],
+            "IEEEST": [
+              "IEEEST_9"
+            ]
+          }
+        },
+        {
+          "bus": 32,
+          "generator_id": "GENROU_3",
+          "static_gen_id": 3,
+          "original_synch_Sn_MVA": 843.7,
+          "renewable_Sn_MVA": 843.7,
+          "replacement_rule": "Equal Sn; retain StaticGen and all its parameters; gammaP=gammaQ=1",
+          "removed": {
+            "GENROU": [
+              "GENROU_3"
+            ],
+            "TGOV1N": [
+              "TGOV1_3"
+            ],
+            "IEEEX1": [
+              "IEEEX1_3"
+            ],
+            "IEEEST": [
+              "IEEEST_3"
+            ]
+          }
+        }
+      ],
+      "renewable_P_MW": 2019.99999999997,
+      "total_generation_P_MW": 6105.148412289636,
+      "renewable_share_pct": 33.086828748236805,
+      "share_basis": "Own online StaticGen actual P after PFlow, captured before TDS.init (S0/S1 exact identity reuse)",
+      "scenario_class": "main_penetration_scenarios",
+      "include_in_day3b_main_heatmap": true,
+      "original_sg_M_sum": 1813.84938,
+      "remaining_sg_M_sum": 1590.0858400000002,
+      "removed_sg_M_sum": 223.76354,
+      "removed_M_fraction_pct": 12.336390356734029,
+      "expected_share_from_identical_static_plan": {
+        "renewable_P_MW": 2019.99999999997,
+        "total_generation_P_MW": 6105.148412289636,
+        "renewable_share_pct": 33.086828748236805
+      },
+      "smoke_evidence": {
+        "mode": "MEASURED_DAY3A5",
+        "summary_reference": "results/day3a5/main_smoke/S3/summary.json"
+      },
+      "smoke_passed": true
+    }
+  ],
+  "assembly_version": "1.0",
+  "scenario_class": "main_penetration_scenarios",
+  "include_in_day3b_main_heatmap": true,
+  "assembly_configuration": {
+    "day3a_manifest": "cases/renewable/manifest.json",
+    "candidate_table": "docs/day3_generator_candidates.csv",
+    "fixed_replacement_buses": [
+      37,
+      38
+    ],
+    "third_bus_candidates": [
+      35,
+      32
+    ],
+    "main_output": "cases/renewable/main",
+    "stress_output": "cases/renewable/stress",
+    "smoke_results": "results/day3a5/main_smoke",
+    "selection_rule": "maximize minimum hop distance; then sum of hop distances; then smallest bus ID"
+  },
+  "assembly_builder": {
+    "script": "scripts/build_main_renewable_scenarios.py",
+    "script_sha256": "32f839d295442903badf56b692a864642961be93417043a1ac8c3c8caf5e9ae0",
+    "module_sha256": "f898f40868be0b6a92b38e0f50a60536115543ec981a6ed2607c4050eb6bb336"
+  },
+  "selection": {
+    "chosen_bus": 32,
+    "candidate_metrics": [
+      {
+        "bus": 32,
+        "target_buses": [
+          37,
+          38
+        ],
+        "paths": [
+          [
+            32,
+            10,
+            13,
+            14,
+            4,
+            3,
+            2,
+            25,
+            37
+          ],
+          [
+            32,
+            10,
+            13,
+            14,
+            4,
+            3,
+            2,
+            25,
+            26,
+            29,
+            38
+          ]
+        ],
+        "hop_distances": [
+          8,
+          10
+        ],
+        "minimum_distance": 8,
+        "sum_distance": 18
+      },
+      {
+        "bus": 35,
+        "target_buses": [
+          37,
+          38
+        ],
+        "paths": [
+          [
+            35,
+            22,
+            21,
+            16,
+            17,
+            27,
+            26,
+            25,
+            37
+          ],
+          [
+            35,
+            22,
+            21,
+            16,
+            17,
+            27,
+            26,
+            29,
+            38
+          ]
+        ],
+        "hop_distances": [
+          8,
+          8
+        ],
+        "minimum_distance": 8,
+        "sum_distance": 16
+      }
+    ],
+    "rule": "maximize minimum hop distance; then sum of hop distances; then smallest bus ID",
+    "graph": "online Line; undirected; unweighted; includes step-up transformer edges"
+  },
+  "inertia_basis": {
+    "source": "results/day3a/scenario_smoke/S0/trajectory.npz",
+    "sha256": "c2deb7310154d60c06e71059d348724d99ea4b117b2beda6700bab93e6335b15",
+    "definition": "sum of original setup-time GENROU.M.v; includes retained Bus39",
+    "inventory": [
+      {
+        "generator_id": "GENROU_1",
+        "bus": 30,
+        "M": 87.36000000000001
+      },
+      {
+        "generator_id": "GENROU_2",
+        "bus": 31,
+        "M": 50.66159999999999
+      },
+      {
+        "generator_id": "GENROU_3",
+        "bus": 32,
+        "M": 60.40892000000001
+      },
+      {
+        "generator_id": "GENROU_4",
+        "bus": 33,
+        "M": 67.19855999999999
+      },
+      {
+        "generator_id": "GENROU_5",
+        "bus": 34,
+        "M": 56.1704
+      },
+      {
+        "generator_id": "GENROU_6",
+        "bus": 35,
+        "M": 75.56472000000001
+      },
+      {
+        "generator_id": "GENROU_7",
+        "bus": 36,
+        "M": 54.13056
+      },
+      {
+        "generator_id": "GENROU_8",
+        "bus": 37,
+        "M": 47.151720000000005
+      },
+      {
+        "generator_id": "GENROU_9",
+        "bus": 38,
+        "M": 116.20289999999999
+      },
+      {
+        "generator_id": "GENROU_10",
+        "bus": 39,
+        "M": 1199.0
+      }
+    ]
+  }
+}

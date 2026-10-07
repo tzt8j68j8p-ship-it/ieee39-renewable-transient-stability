@@ -1,0 +1,8 @@
+{
+  "bus": 16,
+  "fault_start_s": 1.0,
+  "observation_end_s": 8.0,
+  "time_step_s": 0.0078125,
+  "angle_limit_deg": 180.0,
+  "fault_reactance_pu": 0.0001
+}

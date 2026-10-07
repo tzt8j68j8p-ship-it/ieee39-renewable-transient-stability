@@ -1,0 +1,32 @@
+{
+  "main_manifest": "cases/renewable/main/manifest.json",
+  "scenario_ids": [
+    "S0",
+    "S1",
+    "S2",
+    "S3"
+  ],
+  "fault_buses": [
+    10,
+    16,
+    23,
+    25,
+    37
+  ],
+  "reference_duration_s": 0.125,
+  "fault_start_s": 1.0,
+  "observation_end_s": 8.0,
+  "fault_reactance_pu": 0.0001,
+  "time_step_s": 0.0078125,
+  "angle_limit_deg": 180.0,
+  "initial_lower_s": 0.03125,
+  "initial_upper_s": 0.1953125,
+  "extension_durations_s": [
+    0.25,
+    0.3125,
+    0.375,
+    0.5
+  ],
+  "tolerance_s": 0.0078125,
+  "frozen_solver_summary": "configs/frozen_solver.json"
+}

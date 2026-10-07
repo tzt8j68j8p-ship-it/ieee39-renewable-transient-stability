@@ -1,0 +1,36 @@
+{
+  "scenarios": [
+    {
+      "model_sha256": "f1a4e0b7a89c87aa5811d36b91aa054ab4638440c8cc3021b085e18ee6539374",
+      "renewable_P_MW": 0,
+      "total_generation_P_MW": 6105.148412289636,
+      "renewable_share_pct": 0.0,
+      "smoke_passed": true,
+      "scenario_id": "S0"
+    },
+    {
+      "model_sha256": "97bd9447536889f1a3d61e4956acbec812df8cb031652224610eb1e6f4dab5e4",
+      "renewable_P_MW": 539.999999999995,
+      "total_generation_P_MW": 6105.148412289636,
+      "renewable_share_pct": 8.844993823786124,
+      "smoke_passed": true,
+      "scenario_id": "S1"
+    },
+    {
+      "model_sha256": "595cd3a01a05c110fe681e00a4896422a44cb60777e2c008cb22f116ed7764f9",
+      "renewable_P_MW": 1369.999999999966,
+      "total_generation_P_MW": 6105.148412289636,
+      "renewable_share_pct": 22.440076923308894,
+      "smoke_passed": true,
+      "scenario_id": "S2"
+    },
+    {
+      "model_sha256": "6251363814e114373511fb0c6f258aacd6f9a9289e9e666f5c1e5fa7ab669ef7",
+      "renewable_P_MW": 2019.99999999997,
+      "total_generation_P_MW": 6105.148412289636,
+      "renewable_share_pct": 33.086828748236805,
+      "smoke_passed": true,
+      "scenario_id": "S3"
+    }
+  ]
+}

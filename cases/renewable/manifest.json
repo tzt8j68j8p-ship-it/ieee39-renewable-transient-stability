@@ -1,0 +1,257 @@
+{
+  "schema_version": 1,
+  "build_version": "1.0",
+  "sources": [
+    {
+      "file": "cases/renewable/sources/ieee39_10gen_no_source_shunts.xlsx",
+      "sha256": "f1a4e0b7a89c87aa5811d36b91aa054ab4638440c8cc3021b085e18ee6539374"
+    },
+    {
+      "file": "cases/renewable/sources/ieee39_bus37_regcp1_reecb1_pilot.xlsx",
+      "sha256": "6d4b03946c94bbf44fbf246a71f402a797bb4965344894e60bd029b1a3cff7d2"
+    }
+  ],
+  "generator": {
+    "script": "scripts/build_renewable_scenarios.py",
+    "sha256": "297cd359e5a8dc469992ba539fa2144262adbb78031c007201533dad2ece463c",
+    "module_sha256": "3f66559e4a2c612bbd9c924c282eb33ab105f361c3e0ef85b86c208474e2aa84",
+    "openpyxl_version": "3.1.5"
+  },
+  "configuration": {
+    "adapted_source": "cases/renewable/sources/ieee39_10gen_no_source_shunts.xlsx",
+    "pilot_source": "cases/renewable/sources/ieee39_bus37_regcp1_reecb1_pilot.xlsx",
+    "replacement_order": [
+      37,
+      39,
+      38
+    ],
+    "renewable_Sn_rule": "equal_to_original_synchronous_Sn",
+    "baseline_config": "configs/baseline.json",
+    "frozen_solver_summary": "results/day1/nofault/summary.json",
+    "smoke_results": "results/day3a/scenario_smoke"
+  },
+  "common_sheet_fingerprint": "45197203f598e689a8f23804ae26b375220ae3c587a87e15c053a1ad2070ffec",
+  "template_rule": {
+    "gammap": 1,
+    "gammaq": 1,
+    "renewable_Sn": "original GENROU.Sn",
+    "static_gen_parameters": "unchanged",
+    "capacity_scaling": "Kqv/Iqh1/Iql1 multiplied by original Sn / pilot Sn; other template inputs unchanged"
+  },
+  "pilot_crosscheck": {
+    "pilot_bus37_Sn_MVA": 700.0,
+    "formal_bus37_Sn_MVA": 970.2,
+    "intentional_differences": [
+      "Keep StaticGen.Sn from S0",
+      "Match renewable Sn to original SG",
+      "Scale three unconverted controller inputs",
+      "Explicit gammaP/gammaQ=1"
+    ]
+  },
+  "scenarios": [
+    {
+      "scenario_id": "S0",
+      "file": "S0_adapted_sg.xlsx",
+      "sha256": "f1a4e0b7a89c87aa5811d36b91aa054ab4638440c8cc3021b085e18ee6539374",
+      "source_model": "cases/renewable/sources/ieee39_10gen_no_source_shunts.xlsx",
+      "renewable_buses": [],
+      "num_synch_generators": 10,
+      "num_renewable_generators": 0,
+      "replacements": [],
+      "renewable_P_MW": 0,
+      "total_generation_P_MW": 6105.148412289636,
+      "renewable_share_pct": 0.0,
+      "share_basis": "Own online StaticGen actual P after PFlow, captured before TDS.init",
+      "smoke_passed": true
+    },
+    {
+      "scenario_id": "S1",
+      "file": "S1_bus37_renewable.xlsx",
+      "sha256": "97bd9447536889f1a3d61e4956acbec812df8cb031652224610eb1e6f4dab5e4",
+      "source_model": "cases/renewable/sources/ieee39_10gen_no_source_shunts.xlsx",
+      "renewable_buses": [
+        37
+      ],
+      "num_synch_generators": 9,
+      "num_renewable_generators": 1,
+      "replacements": [
+        {
+          "bus": 37,
+          "generator_id": "GENROU_8",
+          "static_gen_id": 8,
+          "original_synch_Sn_MVA": 970.2,
+          "renewable_Sn_MVA": 970.2,
+          "replacement_rule": "Equal Sn; retain StaticGen and all its parameters; gammaP=gammaQ=1",
+          "removed": {
+            "GENROU": [
+              "GENROU_8"
+            ],
+            "TGOV1N": [
+              "TGOV1_8"
+            ],
+            "IEEEX1": [
+              "IEEEX1_8"
+            ],
+            "IEEEST": [
+              "IEEEST_8"
+            ]
+          }
+        }
+      ],
+      "renewable_P_MW": 539.999999999995,
+      "total_generation_P_MW": 6105.148412289636,
+      "renewable_share_pct": 8.844993823786124,
+      "share_basis": "Own online StaticGen actual P after PFlow, captured before TDS.init",
+      "smoke_passed": true
+    },
+    {
+      "scenario_id": "S2",
+      "file": "S2_bus37_bus39_renewable.xlsx",
+      "sha256": "bbca0a5621fe682e5cb0fcc3e203e8df043a8cb7c4e2cd72bf46bd0676211558",
+      "source_model": "cases/renewable/sources/ieee39_10gen_no_source_shunts.xlsx",
+      "renewable_buses": [
+        37,
+        39
+      ],
+      "num_synch_generators": 8,
+      "num_renewable_generators": 2,
+      "replacements": [
+        {
+          "bus": 37,
+          "generator_id": "GENROU_8",
+          "static_gen_id": 8,
+          "original_synch_Sn_MVA": 970.2,
+          "renewable_Sn_MVA": 970.2,
+          "replacement_rule": "Equal Sn; retain StaticGen and all its parameters; gammaP=gammaQ=1",
+          "removed": {
+            "GENROU": [
+              "GENROU_8"
+            ],
+            "TGOV1N": [
+              "TGOV1_8"
+            ],
+            "IEEEX1": [
+              "IEEEX1_8"
+            ],
+            "IEEEST": [
+              "IEEEST_8"
+            ]
+          }
+        },
+        {
+          "bus": 39,
+          "generator_id": "GENROU_10",
+          "static_gen_id": 10,
+          "original_synch_Sn_MVA": 1199.0,
+          "renewable_Sn_MVA": 1199.0,
+          "replacement_rule": "Equal Sn; retain StaticGen and all its parameters; gammaP=gammaQ=1",
+          "removed": {
+            "GENROU": [
+              "GENROU_10"
+            ],
+            "TGOV1N": [
+              "TGOV1_10"
+            ],
+            "IEEEX1": [
+              "IEEEX1_10"
+            ],
+            "IEEEST": [
+              "IEEEST_10"
+            ]
+          }
+        }
+      ],
+      "renewable_P_MW": 1539.9999999999911,
+      "total_generation_P_MW": 6105.148412289636,
+      "renewable_share_pct": 25.224612015982743,
+      "share_basis": "Own online StaticGen actual P after PFlow, captured before TDS.init",
+      "smoke_passed": true
+    },
+    {
+      "scenario_id": "S3",
+      "file": "S3_bus37_bus39_bus38_renewable.xlsx",
+      "sha256": "5e9ccde236f26791de4ae2729ebeefe71a6b5c730d55f362e31510c8b37dd9b9",
+      "source_model": "cases/renewable/sources/ieee39_10gen_no_source_shunts.xlsx",
+      "renewable_buses": [
+        37,
+        39,
+        38
+      ],
+      "num_synch_generators": 7,
+      "num_renewable_generators": 3,
+      "replacements": [
+        {
+          "bus": 37,
+          "generator_id": "GENROU_8",
+          "static_gen_id": 8,
+          "original_synch_Sn_MVA": 970.2,
+          "renewable_Sn_MVA": 970.2,
+          "replacement_rule": "Equal Sn; retain StaticGen and all its parameters; gammaP=gammaQ=1",
+          "removed": {
+            "GENROU": [
+              "GENROU_8"
+            ],
+            "TGOV1N": [
+              "TGOV1_8"
+            ],
+            "IEEEX1": [
+              "IEEEX1_8"
+            ],
+            "IEEEST": [
+              "IEEEST_8"
+            ]
+          }
+        },
+        {
+          "bus": 39,
+          "generator_id": "GENROU_10",
+          "static_gen_id": 10,
+          "original_synch_Sn_MVA": 1199.0,
+          "renewable_Sn_MVA": 1199.0,
+          "replacement_rule": "Equal Sn; retain StaticGen and all its parameters; gammaP=gammaQ=1",
+          "removed": {
+            "GENROU": [
+              "GENROU_10"
+            ],
+            "TGOV1N": [
+              "TGOV1_10"
+            ],
+            "IEEEX1": [
+              "IEEEX1_10"
+            ],
+            "IEEEST": [
+              "IEEEST_10"
+            ]
+          }
+        },
+        {
+          "bus": 38,
+          "generator_id": "GENROU_9",
+          "static_gen_id": 9,
+          "original_synch_Sn_MVA": 1684.1,
+          "renewable_Sn_MVA": 1684.1,
+          "replacement_rule": "Equal Sn; retain StaticGen and all its parameters; gammaP=gammaQ=1",
+          "removed": {
+            "GENROU": [
+              "GENROU_9"
+            ],
+            "TGOV1N": [
+              "TGOV1_9"
+            ],
+            "IEEEX1": [
+              "IEEEX1_9"
+            ],
+            "IEEEST": [
+              "IEEEST_9"
+            ]
+          }
+        }
+      ],
+      "renewable_P_MW": 2369.999999999962,
+      "total_generation_P_MW": 6105.148412289636,
+      "renewable_share_pct": 38.8196951155055,
+      "share_basis": "Own online StaticGen actual P after PFlow, captured before TDS.init",
+      "smoke_passed": true
+    }
+  ]
+}

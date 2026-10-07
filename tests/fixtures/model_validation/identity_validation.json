@@ -1,0 +1,48 @@
+{
+  "accepted": true,
+  "frozen_file_count": 598,
+  "changed_frozen_files": [],
+  "execution_program_unchanged": true,
+  "source_manifest_sha256": "8863036d3c827ca6a71f7bf2b343282c707e63bedc6daa434193a948ff7c1422",
+  "final_manifest_sha256": "b5c7264fbb599e557477287ec67b327832a74dbd15e68f38901d5da770511e0a",
+  "models_and_manifest_reproducible": true,
+  "same_common_workbook_data": true,
+  "identical_static_PFlow_injections": true,
+  "identical_PFlow_voltages_and_angles": true,
+  "identical_PFlow_config": true,
+  "all_solver_configs_equal_frozen_day1": true,
+  "all_remaining_sg_inertia_and_COI_verified": true,
+  "old_project_imports": [],
+  "tests": {
+    "tests_run": 75,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": true,
+    "runtime_s": 0.7290665000000445,
+    "existing_tests": 60,
+    "new_scenario_tests": 15,
+    "TDS_calls": 0,
+    "stage": "after manifest actual-PFlow enrichment"
+  },
+  "no_fault_TDS_calls": 4,
+  "fault_TDS_calls": 0,
+  "cct_calls": 0,
+  "smoke_cli_runtime_s": 18.521808199999214,
+  "python_version": "3.13.15",
+  "ANDES_version": "2.0.0",
+  "installed_ANDES_API_sha256": {
+    "models/renewable/regca1.py": "b8b458f91d4744f9633676b5684067d2b3b04fbbea94380dce29138d5682c392",
+    "models/renewable/regcp1.py": "6de740b6443c86dc5a5881505162ba80431597830e5b55455396f061b5455802",
+    "models/renewable/reecb1.py": "c88e00fa586288b69a255c0789f2f82fb833058a080a673e90211568c1602f1f",
+    "models/measurement/pll.py": "ee147a79fcc7e375c67ccf885ccc0f97b6dca3a2490e2ead71afccb5b2f9081f",
+    "models/synchronous/genbase.py": "423dcd590748d328fe8a3ad7e41ff321810a790a476d4fab41066305d54d5702",
+    "system/facade.py": "b6aa12d10811a5b35e0d5939c309d3414713daff4f5d30f2b9063e0d518080c9",
+    "routines/tds.py": "224ff43d78de8e6808efa0a6b858d8dbe2ca511128a90a8260009c8146d6e8ba"
+  },
+  "source_warnings_retained": [
+    "ACEc bias corrected to -1.0 by ANDES",
+    "GENROU xl > xd2 typical-upper-limit warning"
+  ],
+  "Day3B_automatic_start": false
+}

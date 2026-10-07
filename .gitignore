@@ -1,0 +1,43 @@
+# Local environments, generated code and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+build/
+dist/
+*.log
+*.npz
+*.tmp
+*.bak
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+*.code-workspace
+Thumbs.db
+.DS_Store
+
+# Preserve full experiment archives locally; publish curated copies only
+/results/
+/figures/
+/refs/
+!examples/results/
+
+# Internal stage-by-stage acceptance and archive reporting
+/docs/day1_acceptance.md
+/docs/day2_acceptance.md
+/docs/day2_5_acceptance.md
+/docs/day3_scenario_acceptance.md
+/docs/day3a5_main_scenarios.md
+/docs/day3b_acceptance.md
+/docs/day3_candidate_selection.md
+/docs/provenance.md
+/scripts/report_day3b.py

@@ -1,0 +1,35 @@
+{
+  "figures": [
+    {
+      "file": "baseline_cct_ranking.png",
+      "sha256": "842c0518f6f84450ed59028e4daa6d45ff7f39b91b069233c2acac7ea0e47d7a",
+      "origin": "resolved_cct_ranking.png",
+      "copied_without_redrawing": true
+    },
+    {
+      "file": "renewable_cct_heatmap.png",
+      "sha256": "e4b1ce895cff516487e2ae2a4cd148ca25421f1cae3cf37ee412540d5236eaa5",
+      "origin": "01_cct_heatmap.png",
+      "copied_without_redrawing": true
+    },
+    {
+      "file": "cct_vs_renewable_share.png",
+      "sha256": "8f57ba9c409ab1ca37b83886e9c97fefd8055a3ccccec99c25323df733716250",
+      "origin": "02_cct_vs_renewable_share.png",
+      "copied_without_redrawing": true
+    },
+    {
+      "file": "bus16_transient_response.png",
+      "sha256": "b9eae70e5d4298e4a3c3fe907d37ee0214ae86b4db3fb66025b1e3e0e1f744c1",
+      "origin": "03_bus16_reference_angle_response.png",
+      "copied_without_redrawing": true
+    },
+    {
+      "file": "reference_voltage_heatmap.png",
+      "sha256": "8842a390e486211a7ed8b6afd05f5e33f100363db67e9d9438a7cade9844184a",
+      "origin": "04_reference_min_voltage_heatmap.png",
+      "copied_without_redrawing": true
+    }
+  ],
+  "additional_TDS_calls": 0
+}

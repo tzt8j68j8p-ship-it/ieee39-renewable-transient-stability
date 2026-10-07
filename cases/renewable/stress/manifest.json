@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "scenario_class": "external-equivalent_stress_scenarios",
+  "include_in_day3b_main_heatmap": false,
+  "reference_only": true,
+  "original_day3a_manifest_sha256": "b5c7264fbb599e557477287ec67b327832a74dbd15e68f38901d5da770511e0a",
+  "scenarios": [
+    {
+      "scenario_id": "STRESS_S2",
+      "file": "../S2_bus37_bus39_renewable.xlsx",
+      "sha256": "bbca0a5621fe682e5cb0fcc3e203e8df043a8cb7c4e2cd72bf46bd0676211558",
+      "source_model": "cases/renewable/sources/ieee39_10gen_no_source_shunts.xlsx",
+      "renewable_buses": [
+        37,
+        39
+      ],
+      "num_synch_generators": 8,
+      "num_renewable_generators": 2,
+      "replacements": [
+        {
+          "bus": 37,
+          "generator_id": "GENROU_8",
+          "static_gen_id": 8,
+          "original_synch_Sn_MVA": 970.2,
+          "renewable_Sn_MVA": 970.2,
+          "replacement_rule": "Equal Sn; retain StaticGen and all its parameters; gammaP=gammaQ=1",
+          "removed": {
+            "GENROU": [
+              "GENROU_8"
+            ],
+            "TGOV1N": [
+              "TGOV1_8"
+            ],
+            "IEEEX1": [
+              "IEEEX1_8"
+            ],
+            "IEEEST": [
+              "IEEEST_8"
+            ]
+          }
+        },
+        {
+          "bus": 39,
+          "generator_id": "GENROU_10",
+          "static_gen_id": 10,
+          "original_synch_Sn_MVA": 1199.0,
+          "renewable_Sn_MVA": 1199.0,
+          "replacement_rule": "Equal Sn; retain StaticGen and all its parameters; gammaP=gammaQ=1",
+          "removed": {
+            "GENROU": [
+              "GENROU_10"
+            ],
+            "TGOV1N": [
+              "TGOV1_10"
+            ],
+            "IEEEX1": [
+              "IEEEX1_10"
+            ],
+            "IEEEST": [
+              "IEEEST_10"
+            ]
+          }
+        }
+      ],
+      "renewable_P_MW": 1539.9999999999911,
+      "total_generation_P_MW": 6105.148412289636,
+      "renewable_share_pct": 25.224612015982743,
+      "share_basis": "Own online StaticGen actual P after PFlow, captured before TDS.init",
+      "smoke_passed": true,
+      "source_day3a_scenario_id": "S2",
+      "scenario_class": "external-equivalent_stress_scenarios",
+      "include_in_day3b_main_heatmap": false,
+      "smoke_summary_reference": "results/day3a/scenario_smoke/S2/summary.json",
+      "original_sg_M_sum": 1813.84938,
+      "remaining_sg_M_sum": 567.69766,
+      "removed_sg_M_sum": 1246.15172,
+      "removed_M_fraction_pct": 68.70205066310412
+    },
+    {
+      "scenario_id": "STRESS_S3",
+      "file": "../S3_bus37_bus39_bus38_renewable.xlsx",
+      "sha256": "5e9ccde236f26791de4ae2729ebeefe71a6b5c730d55f362e31510c8b37dd9b9",
+      "source_model": "cases/renewable/sources/ieee39_10gen_no_source_shunts.xlsx",
+      "renewable_buses": [
+        37,
+        39,
+        38
+      ],
+      "num_synch_generators": 7,
+      "num_renewable_generators": 3,
+      "replacements": [
+        {
+          "bus": 37,
+          "generator_id": "GENROU_8",
+          "static_gen_id": 8,
+          "original_synch_Sn_MVA": 970.2,
+          "renewable_Sn_MVA": 970.2,
+          "replacement_rule": "Equal Sn; retain StaticGen and all its parameters; gammaP=gammaQ=1",
+          "removed": {
+            "GENROU": [
+              "GENROU_8"
+            ],
+            "TGOV1N": [
+              "TGOV1_8"
+            ],
+            "IEEEX1": [
+              "IEEEX1_8"
+            ],
+            "IEEEST": [
+              "IEEEST_8"
+            ]
+          }
+        },
+        {
+          "bus": 39,
+          "generator_id": "GENROU_10",
+          "static_gen_id": 10,
+          "original_synch_Sn_MVA": 1199.0,
+          "renewable_Sn_MVA": 1199.0,
+          "replacement_rule": "Equal Sn; retain StaticGen and all its parameters; gammaP=gammaQ=1",
+          "removed": {
+            "GENROU": [
+              "GENROU_10"
+            ],
+            "TGOV1N": [
+              "TGOV1_10"
+            ],
+            "IEEEX1": [
+              "IEEEX1_10"
+            ],
+            "IEEEST": [
+              "IEEEST_10"
+            ]
+          }
+        },
+        {
+          "bus": 38,
+          "generator_id": "GENROU_9",
+          "static_gen_id": 9,
+          "original_synch_Sn_MVA": 1684.1,
+          "renewable_Sn_MVA": 1684.1,
+          "replacement_rule": "Equal Sn; retain StaticGen and all its parameters; gammaP=gammaQ=1",
+          "removed": {
+            "GENROU": [
+              "GENROU_9"
+            ],
+            "TGOV1N": [
+              "TGOV1_9"
+            ],
+            "IEEEX1": [
+              "IEEEX1_9"
+            ],
+            "IEEEST": [
+              "IEEEST_9"
+            ]
+          }
+        }
+      ],
+      "renewable_P_MW": 2369.999999999962,
+      "total_generation_P_MW": 6105.148412289636,
+      "renewable_share_pct": 38.8196951155055,
+      "share_basis": "Own online StaticGen actual P after PFlow, captured before TDS.init",
+      "smoke_passed": true,
+      "source_day3a_scenario_id": "S3",
+      "scenario_class": "external-equivalent_stress_scenarios",
+      "include_in_day3b_main_heatmap": false,
+      "smoke_summary_reference": "results/day3a/scenario_smoke/S3/summary.json",
+      "original_sg_M_sum": 1813.84938,
+      "remaining_sg_M_sum": 451.49476000000004,
+      "removed_sg_M_sum": 1362.35462,
+      "removed_M_fraction_pct": 75.1084756552388
+    }
+  ]
+}

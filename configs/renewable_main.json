@@ -1,0 +1,10 @@
+{
+  "day3a_manifest": "cases/renewable/manifest.json",
+  "candidate_table": "docs/day3_generator_candidates.csv",
+  "fixed_replacement_buses": [37, 38],
+  "third_bus_candidates": [35, 32],
+  "main_output": "cases/renewable/main",
+  "stress_output": "cases/renewable/stress",
+  "smoke_results": "results/day3a5/main_smoke",
+  "selection_rule": "maximize minimum hop distance; then sum of hop distances; then smallest bus ID"
+}
