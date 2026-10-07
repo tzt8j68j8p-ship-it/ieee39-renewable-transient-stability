@@ -1,27 +1,26 @@
 # GitHub portfolio release checklist
 
-Checked on 2026-10-07 (Asia/Shanghai). **The local public package is audited and
-committed-ready; remote publication is blocked by missing CLI authentication.**
-No successful push, public repository, remote workflow or Release is claimed.
+Checked on 2026-10-07 (Asia/Shanghai). **Published: public repository, successful
+CI, and v1.0.0 Portfolio Release.** No simulations were added or rerun during publication.
 
 ## Delivery state
 
 | Item | Verified state |
 |---|---|
-| A. Repository URL | Not created; requested name: `ieee39-renewable-transient-stability` |
-| B. Visibility / branch | Public is requested; local default branch will be `main` |
+| A. Repository URL | [ieee39-renewable-transient-stability](https://github.com/tzt8j68j8p-ship-it/ieee39-renewable-transient-stability) |
+| B. Visibility / branch | Public; default branch `main`; normal pushes without history rewriting |
 | C. README first screen | English title, Chinese link, three-line introduction, renewable CCT heatmap, six highlights |
-| D. Tracked content | 100 files; 1,626,228 bytes (1.551 MiB); raw archives excluded |
+| D. Tracked content | 100 files; 1,627,493 bytes (1.552 MiB); raw archives excluded |
 | E. Largest file | `docs/assets/renewable_cct_heatmap.png`, 134,418 bytes; largest 20 below |
-| F. Privacy | No local drive/profile paths or private project identifiers in staged files |
-| G. Secrets | No secret signature or credential assignment detected; credentials are not included |
+| F. Privacy | Private source locations generalized; no local drive/profile paths or private project identifiers detected in uploaded files |
+| G. Secrets | No credential signature or assignment detected; GitHub secret-scanning alert count was zero |
 | H. Clean installation | New Python 3.13.15 virtual environment; pinned requirements installed; pip check passed |
-| I. Tests | 99/99 passed in the exported public source tree, without raw results or TDS |
-| J. Actions | Workflow prepared: Windows, Python 3.13, dependency install and pure unit tests; remote status unverified |
-| K. Commit | Obtain the final local content identifier with `git rev-parse HEAD`; recorded in the handoff |
-| L. v1.0.0 | Tag and Release not created; wait for successful push and remote homepage verification |
-| M. Images / links | Five PNGs and four SVGs verified; 51 relative documentation links resolve locally; remote rendering pending |
-| N. Remaining public-content issue | None detected in the staged payload; remote publication remains incomplete |
+| I. Tests | 99/99 passed in the isolated public source export, without raw results or TDS |
+| J. Actions | Enabled: Windows, Python 3.13, dependency install and pure tests; [release-source run](https://github.com/tzt8j68j8p-ship-it/ieee39-renewable-transient-stability/actions/runs/37630279775) passed 99/99; [latest runs](https://github.com/tzt8j68j8p-ship-it/ieee39-renewable-transient-stability/actions/workflows/tests.yml) |
+| K. Commit | Release source: `c3369dd04a4d019d9cee62176fb7bbf4bd957b74`; `main` adds this publication record afterward; final main identifier is reported in the delivery handoff |
+| L. v1.0.0 | Annotated tag pushed; [v1.0.0 — Portfolio Release](https://github.com/tzt8j68j8p-ship-it/ieee39-renewable-transient-stability/releases/tag/v1.0.0) published; no uploaded binary/raw-data assets |
+| M. Images / links | Five PNGs and four SVGs preserved; 51 relative documentation links resolve; all 16 README image/link targets returned HTTP 200; rendered README HTML verified |
+| N. Remaining public-content issue | None detected in the audited uploaded content |
 
 ## Scope and preservation
 
@@ -44,10 +43,31 @@ All four public entry points also pass `--help`. Unit tests use isolated accepte
 metadata fixtures; numerical criteria and real-run cache checks remain unchanged.
 The temporary validation environment and detailed audit logs remain local.
 
+The release-source GitHub Actions run independently installed dependencies and
+reported `Ran 99 tests` followed by `OK`. CI runs only pure tests, with no TDS matrix.
+The final publication-record commit changes documentation only.
+
 Git whitespace checks pass. Historical SHA256-sensitive Python/JSON/CSV bytes
 are preserved across checkout; generated SVG formatting is preserved separately.
-The full GPL-3.0 license and upstream ANDES notices are included. Recognition by
-GitHub will be checked after the repository exists.
+GitHub recognizes the standard root license as GPL-3.0. The project grant remains
+GPL-3.0-or-later; upstream ANDES copyright and grant are retained in the third-party notices.
+
+## Remote verification
+
+- The public homepage returned HTTP 200. GitHub's rendered README HTML contains
+  the title, tables, main heatmap before Highlights, collapsible share figure,
+  and the Mermaid rendering container.
+- Remote Git blob identifiers matched every local uploaded file. The default
+  branch, exact description, and all nine topics were verified through GitHub.
+- Relative documentation targets exist in the remote tree; the 16 distinct
+  README image/link destinations were checked over HTTP. Images retain their source hashes.
+- Verification used GitHub's server-rendered HTML and HTTP resources. An
+  interactive browser screenshot check was not performed because browser automation
+  permissions were unavailable. Client-side Mermaid rendering was not visually inspected.
+- Secret scanning and push protection are both enabled. No detection was bypassed.
+- Release `v1.0.0` targets the verified source commit above. GitHub provides its
+  normal source archives; no raw trajectories or duplicate repository archive were uploaded.
+  The completed publication checklist is maintained on `main` after release creation.
 
 ## Largest 20 tracked files
 
@@ -64,7 +84,7 @@ GitHub will be checked after the repository exists.
 | `docs/assets/cct_vs_renewable_share.svg` | 59,883 |
 | `cases/ieee39_official.xlsx` | 38,449 |
 | `tests/fixtures/model_validation/scenario_summary.json` | 37,318 |
-| `LICENSE` | 35,915 |
+| `LICENSE` | 35,149 |
 | `cases/renewable/sources/ieee39_bus37_regcp1_reecb1_pilot.xlsx` | 28,129 |
 | `cases/renewable/S0_adapted_sg.xlsx` | 27,583 |
 | `cases/renewable/main/S0_adapted_sg.xlsx` | 27,583 |
@@ -74,25 +94,14 @@ GitHub will be checked after the repository exists.
 | `cases/renewable/main/S1_bus37_renewable.xlsx` | 27,314 |
 | `cases/renewable/main/S2_bus37_bus38_renewable.xlsx` | 27,154 |
 
-## Remaining publication steps
+## Repository presentation
 
-The connected GitHub API exposes repository-content operations, but no repository
-or Release creation action. The browser denied access because saved browser
-permissions could not be verified. The installed official GitHub CLI has no
-authenticated host. These are tooling/authentication limitations, not an audit failure.
-
-1. Complete GitHub CLI sign-in through its normal interactive authorization flow.
-2. Create/associate the public repository, set the description/topics and `main`.
-3. Push without force, verify README rendering, images/links, GPL recognition and CI.
-4. Create tag `v1.0.0` and Release `v1.0.0 — Portfolio Release`, without raw data assets.
-5. Verify secret scanning and push protection; enable them if repository permissions allow.
-
-Requested description:
+Description:
 
 > Python/ANDES toolkit for IEEE 39-bus transient stability, batch fault analysis,
 > CCT estimation and renewable integration studies.
 
-Requested topics: `power-system`, `transient-stability`, `ieee39`, `renewable-energy`,
+Topics: `power-system`, `transient-stability`, `ieee39`, `renewable-energy`,
 `critical-clearing-time`, `andes`, `python`, `power-grid`, `dynamic-simulation`.
 
-No scientific functionality is added during publication.
+No scientific functionality is added during publication. Work stops at this release.
